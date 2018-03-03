@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="88.5dp"
+            android:id="@+id/linearLayout2">
+            <EditText
+                android:hint="Your username..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/uname" />
+            <EditText
+                android:hint="Your password..."
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pword" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="24.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout4" />
+            <TextView
+                android:text="Forget password"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="155.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/forgetPword"
+                android:gravity="center"
+                android:clickable="true" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="41.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout4" />
+            <Button
+                android:text="Login"
+                android:layout_width="131.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginBtn" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="92.0dp"
+        android:id="@+id/linearLayout5" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="116.5dp"
+        android:id="@+id/linearLayout6">
+        <Button
+            android:text="Login With Google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logGoogle" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="19.0dp"
+            android:id="@+id/linearLayout7" />
+        <Button
+            android:text="Login With Facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logFacebook" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="38.0dp"
+        android:id="@+id/linearLayout8" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout9">
+        <TextView
+            android:text="Create an Account"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="41.5dp"
+            android:gravity="center"
+            android:id="@+id/signUp"
+            android:clickable="true" />
+    </LinearLayout>
+</LinearLayout>
