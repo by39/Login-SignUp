@@ -43,7 +43,7 @@ namespace LoginSignUpApp.Droid
             logIn.Click += async (s,e)=>
             {
 
-                var response = await RunPostAsync().ConfigureAwait(false);
+                //var response = await RunPostAsync().ConfigureAwait(false);
                 
             };
 
@@ -81,32 +81,7 @@ namespace LoginSignUpApp.Droid
             }
         }
 
-        public async Task<Person> RunPostAsync()
-        {
-
-            try
-            {
-                var RestUrl = "http://10.20.1.68:45457/api/Person/";
-                var request = new HttpRequestMessage(HttpMethod.Post, RestUrl);
-
-                var p = new Person();
-
-                p.name = "MyNewTestAccount";
-                p.password = "MyNewTestAccountPin";
-                p.email = "MyNewTestAccountEmail";
-
-                var json = JsonConvert.SerializeObject(p);
-                request.Content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                var response = await client.SendAsync(request);
-
-                return p;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
+        
 
     }
 }
