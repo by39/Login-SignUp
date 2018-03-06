@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Text;
 using System.Threading;
+using System.Security.Cryptography;
 
 namespace LoginSignUpApp.Droid
 {
@@ -40,11 +41,58 @@ namespace LoginSignUpApp.Droid
 
             TextView signUp = FindViewById<TextView>(Resource.Id.signUp);
 
-            logIn.Click += async (s,e)=>
+            logIn.Click += async (s,e) =>
             {
+                Person p = new Person();
+                string uName = userName.Text;
+                string pWord = userPword.Text;
 
-                //var response = await RunPostAsync().ConfigureAwait(false);
-                
+                var response = await RunGetAsync(uName).ConfigureAwait(false);
+
+                p.id = response.id;
+                p.name = response.name;
+                p.password = response.password;
+                p.email = response.email;
+
+
+                string orig = pWord;
+
+                byte[] hashBytes = Convert.FromBase64String(p.password);
+
+                byte[] salt = new byte[16];
+
+                Array.Copy(hashBytes, 0, salt, 0, 16);
+
+                var pbkdf2 = new Rfc2898DeriveBytes(orig, salt, 10000);
+
+                byte[] hash = pbkdf2.GetBytes(20);
+
+                bool ok = true;
+
+                for (int i = 0; i < 20; i++)
+                {
+                    if (hashBytes[i + 16] != hash[i])
+                    {
+                        ok = false;
+                    }
+                }
+
+                Console.WriteLine(ok);
+
+                if (ok == true)
+                {
+                    Intent intent = new Intent(this, typeof(LoggedInActivity));
+                    this.StartActivity(intent);
+                }
+                else
+                {
+                    Android.App.AlertDialog.Builder message = new Android.App.AlertDialog.Builder(this);
+
+                    message.SetTitle("Opssss");
+                    message.SetMessage("The password incorrect!");
+                    message.SetNegativeButton("OK", (c, ev) => { });
+                    message.Show();
+                }
             };
 
             signUp.Click += delegate
@@ -55,27 +103,25 @@ namespace LoginSignUpApp.Droid
 
 		}
 
-        public async Task<Person> RunGetAsync()
+        public async Task<Person> RunGetAsync(string name)
         {
             try
             {
-                var restURL = "http://192.168.1.75:45455/api/Person/";
-                var uri = new Uri(string.Format(restURL, string.Empty));
-                var request = new HttpRequestMessage(HttpMethod.Get, restURL);
+                var RestUrl = "http://10.20.1.68:45455/api/Person/" + name;
 
-                Person dd = null;
+                var request = new HttpRequestMessage(HttpMethod.Get, RestUrl);
+
+                var p = new Person();
 
                 var response = await client.SendAsync(request);
-
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    dd = JsonConvert.DeserializeObject<Person>(content);
+                    p = JsonConvert.DeserializeObject<Person>(content);
                 }
-                return dd;
-                
+                return p;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return null;
             }
