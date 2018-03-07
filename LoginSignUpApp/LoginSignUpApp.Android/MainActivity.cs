@@ -43,11 +43,12 @@ namespace LoginSignUpApp.Droid
 
             logIn.Click += async (s,e) =>
             {
+                
                 Person p = new Person();
                 string uName = userName.Text;
                 string pWord = userPword.Text;
 
-                var response = await RunGetAsync(uName).ConfigureAwait(false);
+                var response = await RunGetAsync(uName);
 
                 p.id = response.id;
                 p.name = response.name;
@@ -86,12 +87,13 @@ namespace LoginSignUpApp.Droid
                 }
                 else
                 {
+
                     Android.App.AlertDialog.Builder message = new Android.App.AlertDialog.Builder(this);
 
                     message.SetTitle("Opssss");
                     message.SetMessage("The password incorrect!");
                     message.SetNegativeButton("OK", (c, ev) => { });
-                    message.Show();
+                    message.Show(); 
                 }
             };
 
@@ -100,8 +102,14 @@ namespace LoginSignUpApp.Droid
                 Intent intent = new Intent(this, typeof(SignUpActivity));
                 this.StartActivity(intent);
             };
+            forgetPword.Click += delegate
+            {
+                Intent intent = new Intent(this, typeof(ResetPasswordActivity));
+                this.StartActivity(intent);
+            };
 
-		}
+
+        }
 
         public async Task<Person> RunGetAsync(string name)
         {
@@ -126,9 +134,6 @@ namespace LoginSignUpApp.Droid
                 return null;
             }
         }
-
-        
-
     }
 }
 

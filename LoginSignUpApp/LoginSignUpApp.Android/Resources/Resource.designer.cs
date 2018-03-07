@@ -60,8 +60,11 @@ namespace LoginSignUpApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050013
-			public const int email = 2131034131;
+			// aapt resource value: 0x7f050015
+			public const int doneBtn = 2131034133;
+			
+			// aapt resource value: 0x7f050010
+			public const int email = 2131034128;
 			
 			// aapt resource value: 0x7f050006
 			public const int forgetPword = 2131034118;
@@ -102,20 +105,32 @@ namespace LoginSignUpApp.Droid
 			// aapt resource value: 0x7f050007
 			public const int loginBtn = 2131034119;
 			
-			// aapt resource value: 0x7f050011
-			public const int pWord = 2131034129;
+			// aapt resource value: 0x7f050013
+			public const int newPword = 2131034131;
+			
+			// aapt resource value: 0x7f050017
+			public const int pWord = 2131034135;
 			
 			// aapt resource value: 0x7f050003
 			public const int pword = 2131034115;
 			
+			// aapt resource value: 0x7f050014
+			public const int reNewPword = 2131034132;
+			
+			// aapt resource value: 0x7f050018
+			public const int rePWord = 2131034136;
+			
 			// aapt resource value: 0x7f050012
-			public const int rePWord = 2131034130;
+			public const int reSetPwordLayout = 2131034130;
+			
+			// aapt resource value: 0x7f050011
+			public const int resetBtn = 2131034129;
 			
 			// aapt resource value: 0x7f05000f
 			public const int signUp = 2131034127;
 			
-			// aapt resource value: 0x7f050010
-			public const int uName = 2131034128;
+			// aapt resource value: 0x7f050016
+			public const int uName = 2131034134;
 			
 			// aapt resource value: 0x7f050002
 			public const int uname = 2131034114;
@@ -140,7 +155,10 @@ namespace LoginSignUpApp.Droid
 			public const int Main = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int SignUpPage = 2130903042;
+			public const int ResetPassword = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int SignUpPage = 2130903043;
 			
 			static Layout()
 			{
