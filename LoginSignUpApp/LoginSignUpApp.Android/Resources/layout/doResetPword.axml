@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="47.0dp"
+        android:id="@+id/linearLayout1" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="185.5dp"
+        android:id="@+id/linearLayout2">
+        <EditText
+            android:inputType="textPassword"
+            android:hint="Enter your new password.."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/newPword" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="25.5dp"
+            android:id="@+id/linearLayout7" />
+        <EditText
+            android:inputType="textPassword"
+            android:hint="Enter your new password again.."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reNewPword" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="25.5dp"
+            android:id="@+id/linearLayout8" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="69.0dp"
+            android:id="@+id/linearLayout3">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="109.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout4" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout5">
+                <Button
+                    android:text="Reset"
+                    android:layout_width="100.0dp"
+                    android:layout_height="49.5dp"
+                    android:id="@+id/set" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="109.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout6" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
